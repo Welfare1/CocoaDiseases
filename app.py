@@ -16,7 +16,7 @@ try:
     model_yolo = YOLO("Model/model_cacao.pt")
 
     # Charger le modèle de classification basé sur ConvNeXtSmall
-    classifier = tf.keras.models.load_model("Model/model_convnextsmall_mine0.keras", compile=False)
+    classifier = tf.keras.models.load_model("Model/modele_convnext_small_mine_tf(e30).keras", compile=False)
 
     st.sidebar.success("Modèles chargés avec succès ✅")
 except Exception as e:
@@ -43,8 +43,7 @@ def process_image(image):
         st.error("L'image chargée est invalide. Veuillez réessayer.")
         return None, None
 
-    # Redimensionner l'image pour l'affichage
-    display_image = cv2.resize(image, (600, 400))
+    
     
     # Appliquer le modèle YOLOv8 pour détecter les fèves
     results = model_yolo(image)
@@ -53,7 +52,7 @@ def process_image(image):
     boxes = results[0].boxes
     if boxes is None:
         st.warning("Aucune fève détectée dans l'image.")
-        return image, display_image
+        return image
 
     xyxy = boxes.xyxy.cpu().numpy()
     confidences = boxes.conf.cpu().numpy()
@@ -70,7 +69,8 @@ def process_image(image):
 
     if not detections_list:
         st.warning("Aucune fève n'a été retenue après filtrage.")
-        return image, display_image
+        return image
+    
 
     # Copie de l'image pour annoter les résultats
     output_img = image.copy()
@@ -104,7 +104,7 @@ def process_image(image):
         cv2.putText(output_img, label_text, (x1, max(y1 - 10, 0)),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 2)
 
-    return output_img, display_image
+    return output_img
 
 # --------------------------
 # 3. Interface Streamlit
@@ -122,11 +122,14 @@ if uploaded_file is not None:
 
     if image is not None:
         # Traiter l'image
-        output_img, display_image = process_image(image)
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        output_img = process_image(image)
+        
+        #output_img = cv2.cvtColor(output_img, cv2.COLOR_BGR2RGB)
 
         if output_img is not None:
             # Afficher les images
-            st.image(display_image, caption='Image Originale Redimensionnée', use_column_width=True)
+            st.image(image, caption='Image Originale Redimensionnée', use_column_width=True)
             st.image(output_img, caption='Image avec Détections et Classifications', use_column_width=True)
     else:
         st.error("Impossible de lire l'image. Veuillez réessayer avec une autre image.")
