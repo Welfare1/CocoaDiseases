@@ -33,4 +33,49 @@
 ![seaborn](https://img.shields.io/badge/seaborn-0.13.2-blue)
 ![shutil](https://img.shields.io/badge/shutil-Standard%20Library-lightgrey) <!-- Standard Library, pas de version spécifique -->
 
-## Machine Learning & Data Science
+# Table of Contents
+
+1. 🔎 [Project Context](#project-context)
+2. ⏱️ [Project Objectives](#project-objectives)
+3. 🏗️ [Project Architecture](#project-architecture)
+4. 📁 [Project Structure](#project-structure)
+5. 🔗 [Data Collection Pipelines with Kedro](#data-collection-pipelines-with-kedro)
+6. 💻 [Data Processing and Use of Google Colab](#data-processing-and-use-of-google-colab)
+7. 🤖 [Machine Learning Models](#machine-learning-models)
+8. 🖥️ [User Interface](#user-interface)
+9. 📄 [Conclusion](#conclusion)
+10. ⚠️ [Challenges Encountered](#challenges-encountered)
+11. 🚀 [Next Steps: Phase 2 - Forecasting](#next-steps-phase-2-forecasting)
+
+## Project Context
+<!-- Add the content related to the project context here -->
+
+## Project Objectives
+<!-- Add the content related to the project objectives here -->
+
+## Project Architecture
+<!-- Add the content describing the project architecture here -->
+
+## Project Structure
+<!-- Add the content describing the structure of the project here -->
+
+## Data Collection Pipelines with Kedro
+<!-- Add details about data collection pipelines using Kedro here -->
+
+## Data Processing and Use of Google Colab
+<!-- Add details on data processing and the use of Google Colab here -->
+
+## Machine Learning Models
+<!-- Add details about the machine learning models used here -->
+
+## User Interface
+<!-- Add details about the user interface here -->
+
+## Conclusion
+<!-- Add the conclusion of the project here -->
+
+## Challenges Encountered
+<!-- Add the challenges faced during the project here -->
+
+## Next Steps: Phase 2 - Forecasting
+<!-- Add details about the next steps for phase 2 here -->
