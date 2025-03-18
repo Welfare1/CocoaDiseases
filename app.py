@@ -16,7 +16,7 @@ try:
     model_yolo = YOLO("Model/model_cacao.pt")
 
     # Charger le modèle de classification basé sur ConvNeXtSmall
-    classifier = tf.keras.models.load_model("Model/model_convnextsmall_mine0.keras", compile=False)
+    classifier = tf.keras.models.load_model("Model/modele_convnext_small_mine_tf(e30).keras", compile=False)
 
     st.sidebar.success("Modèles chargés avec succès ✅")
 except Exception as e:
