@@ -32,3 +32,5 @@
 ![pandas](https://img.shields.io/badge/pandas-2.2.3-orange)
 ![seaborn](https://img.shields.io/badge/seaborn-0.13.2-blue)
 ![shutil](https://img.shields.io/badge/shutil-Standard%20Library-lightgrey) <!-- Standard Library, pas de version spécifique -->
+
+## Machine Learning & Data Science
